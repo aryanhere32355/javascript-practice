@@ -1,7 +1,7 @@
 "use strict";
 // alert( 3 + 3)
 console.log(6) 
-console.log("amankro")
+console.log("amankro")  //var have global scope,let and const have local scope
 
 let user = {
   name: "Anand",
