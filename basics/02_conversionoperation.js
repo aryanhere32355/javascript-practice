@@ -17,7 +17,7 @@ let valueInNumber = Number(score)
 // string to bool
 let isLoggedIn = ""
 let booleanIsLoggedIn = Boolean(isLoggedIn)
-// console.log(booleanIsLoggedIn)
+console.log(booleanIsLoggedIn)
 // console.log(typeof booleanIsLoggedIn)
 
 // 1 => true 0 => false
