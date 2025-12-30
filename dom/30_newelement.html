@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | chai aur code</title>
+</head>
+
+<body style="background-color: #212121; color : #fff">
+
+</body>
+<script>
+    const a = document.createElement('div')
+    // console.log(a);
+    a.className = "main"
+    a.id = Math.round(Math.random() * 10 + 1)
+    a.setAttribute("title", "chai")
+    a.style.backgroundColor = "pink"
+    
+    // a.innerHTML = "Chai aur code"
+    //    const c = document.createTextNode("Chai aur code")
+    //    a.append(c)
+    a.append(document.createTextNode("Chai aur code"))
+    a.style.color = "green"
+    document.body.appendChild(a)
+    console.log(a);
+
+</script>
+
+</html>

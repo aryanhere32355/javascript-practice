@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | chai aur code</title>
+</head>
+
+<body style="background-color: #212121; color : #fff">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addlanguage(langname) {
+        const li = document.createElement('li');
+        li.innerHTML = `${langname}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addlanguage("Python")
+    addlanguage("C++")
+    //not optimised approach as we are using innerhtml which traverse the whole document tree, hence we wil use other method
+
+    function addOptimisedlang(langname) {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langname))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptimisedlang("Typescript")
+    //edit
+    const secondlang = document.querySelector("li:nth-child(2)")
+    console.log(secondlang);
+    secondlang.innerHTML = "Snake" //again bad way
+     const newli = document.createElement('li')
+     newli.textContent = "snake"
+     secondlang.replaceWith(newli)
+
+    //  const secondlang1 = document.querySelector("li:nth-child(1)") //use secondlang.outerHTML = '<li>Linux</li>'
+    //  newli.outerHTML = '<li>Linux</li>'
+
+
+     //delete
+     const lastlang =document.querySelector('li:last-child')
+     lastlang.remove()
+
+</script>
+
+</html>
