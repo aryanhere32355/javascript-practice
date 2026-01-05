@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body style="background-color: #212121; color: #212121;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+    
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/aryanhere32355'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET',requestUrl)
+    // console.log("here");
+    xhr.onreadystatechange = function(){ //onreadystate monitos continuosly
+        console.log((xhr.readyState));//will track only for one time, for continue tracking we needed loop
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText);
+            // console.log(typeof data);//will show the api completely but data.fllower will not show you the followers count beacuase the response coming from the object(data here) is string!!(typeOf),hence convert it first in Json
+            console.log(data.followers);
+            
+        }
+    }
+    xhr.send()//to call , when request iis send, it changes continuously form 0-4
+</script>
+</html>
