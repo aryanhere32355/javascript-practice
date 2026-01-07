@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Button clicked</button>
+</body>
+<script>
+    class React{
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:300"
+            //requirement is as the page loads, an object should be created of react(when the button clicked, we get reference of button and second we get info about button clicked for eg console message)
+            document
+            .querySelector('button')
+            .addEventListener('click', this.handleClick.
+            bind(this)//here problem is 'this' is not able to get the reference of server, hence we need to forcefully bind it with others and through this 'this' will get the reference of all other 'this'
+        )
+            
+        }
+        handleClick(){
+            console.log("button clicked");;
+            console.log(this.server);//trying to check whether variables are accessible or not.Here we are having reference of this for button
+            console.log(this);//'this' is getting all the references of react too, we can see here!!
+
+        }
+    }
+    const app = new React()
+</script>
+</html>
